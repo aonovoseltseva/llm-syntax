@@ -1,0 +1,20 @@
+## Hypotheses
+
+Hypothesis 0: Despite AI hallucinations, properly prompted LLMs can be used for syntax parsing without additional functionality (to prove this, we want to collect data on their mistakes)
+Hypothesis 1: Due to numerous hallucinations, LLMs can be used for syntax parsing only as natural language interfaces, providing enhanced visualization, explanation and advanced data representation 
+
+## Hypothesis 0
+
+Script for LLM prompting
+
+- Groq -> Gemma
+
+## Hypothesis 1 
+
+LLM as a natural language interface
+
+- Functions for parsing + Script from Hypothesis
+
+TODO:
+1. def parsing() -> nltk
+2. 
