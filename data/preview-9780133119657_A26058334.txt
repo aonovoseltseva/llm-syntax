@@ -1,0 +1,1056 @@
+chris crawford
+on interactive storytelling
+SECOND EDITION
+Chris Crawford on Interactive Storytelling, Second Edition
+Chris Crawford
+New Riders
+www.newriders.com
+To report errors, please send a note to errata@peachpit.com
+New Riders is an imprint of Peachpit, a division of Pearson Education.
+Copyright © 2013 Chris Crawford
+Senior Editor: Karyn Johnson
+Development Editor: Robyn Thomas
+Production Editor: Cory Borman
+Technical Editor: Michael F. Lynch, Ph.D.
+Copyeditor:  Kelly Kordes Anton 
+Proofreader: Scout Festa
+Composition: Danielle Foster
+Indexer: Jack Lewis
+Cover design: Aren Howell
+Notice of Rights
+All rights reserved. No part of this book may be reproduced or transmitted in any form by any 
+means, electronic, mechanical, photocopying, recording, or otherwise, without the prior written 
+permission of the publisher. For information on getting permission for reprints and excerpts, 
+contact permissions@peachpit.com.
+Notice of Liability
+The information in this book is distributed on an “As Is” basis, without warranty. While every 
+precaution has been taken in the preparation of the book, neither the author nor Peachpit shall 
+have any liability to any person or entity with respect to any loss or damage caused or alleged to be 
+caused directly or indirectly by the instructions contained in this book or by the computer software 
+and hardware products described in it.
+Trademarks
+Many of the designations used by manufacturers and sellers to distinguish their products are 
+claimed as trademarks. Where those designations appear in this book, and Peachpit was aware of 
+a trademark claim, the designations appear as requested by the owner of the trademark. All other 
+product names and services identified throughout this book are used in editorial fashion only and 
+for the benefit of such companies with no intention of infringement of the trademark. No such use, 
+or the use of any trade name, is intended to convey endorsement or other affiliation with this book.
+ISBN-13:
+978-0-321-86497-0
+ISBN-10:
+0-321-86497-2
+9 8 7 6 5 4 3 2 1
+I dedicate this book to the Storytron development team: 
+Louis Dargin, Facundo Dominguez, and Laura Mixon, 
+who pushed the technology of interactive storytelling to new heights.
+Bio
+Chris Crawford earned a Master of Science degree in Physics from the University 
+of Missouri in 1975. After teaching physics for several years, he joined Atari as 
+a game designer in 1979. There he created a number of games: Energy Czar, an 
+educational simulation about the energy crisis; Scram, a nuclear power plant 
+simulation; Eastern Front (1941), a wargame; Gossip, a social interaction game; 
+and Excalibur, an Arthurian game.
+Following the collapse of Atari in 1984, Crawford took up the Macintosh. He 
+created Balance of Power, a game about diplomacy; Patton Versus Rommel, a 
+wargame; Trust & Betrayal, a social interaction game; Balance of the Planet, an 
+environmental simulation game; and Patton Strikes Back, a wargame. In 1992, 
+Crawford decided to leave game design and concentrate his energies on interac-
+tive storytelling, a field that he believed would become important. He created a 
+major technology for interactive storytelling systems, patenting it in 1997. He is 
+now commercializing his technology at his company website at storytron.com.
+Crawford has written five published books: The Art of Computer Game Design,
+now recognized as a classic in the field, in 1982; Balance of Power in 1986; 
+The Art of Interactive Design in 2002; Chris Crawford on Game Design in 2003; 
+and Chris Crawford on Interactive Storytelling in 2004.
+He created the first periodical on game design, the Journal of Computer Game 
+Design, in 1987. He founded and served as Chairman of the Computer Game 
+Developers’ Conference, now known as the Game Developers’ Conference.
+Crawford has given hundreds of lectures at conferences and universities around 
+the world, and published dozens of magazine articles and academic papers.
+Crawford served as computer system designer and observer for the 1999 and 
+2002 NASA Leonid MAC airborne missions; he also has done some analysis of 
+the resulting data. He lives in southern Oregon with his wife, 3 dogs, 7 cats, and 
+16 ducks. You can read more about him on his website at www.erasmatazz.com.
+Table of Contents
+Introduction 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xi
+PART I
+The Basics. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+Chapter 1 Storytelling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+The History of Storytelling. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+Two Mechanisms of Thinking . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+The Tyranny of the Visual  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+Spatial Thinking  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+Temporal Discontinuity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+Chapter 2 Interactivity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+My Definition of Interactivity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+Second-Person Insight  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+A Model for Human Understanding . . . . . . . . . . . . . . . . . . . . . . . . . 32
+Ego Control . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+Degrees of Interactivity 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+So What? 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44
+Chapter 3 Interactive Storytelling . . . . . . . . . . . . . . . . . . . . . . . . . 45
+Extrapolation from Games . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+Interactivized Movies . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+Plot vs. Interactivity  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+Interactive Storytelling Is Unique . . . . . . . . . . . . . . . . . . . . . . . . . . . 54
+vi  Table of Contents
+Individuation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+What Can’t Be Part of Interactive Storytelling? . . . . . . . . . . . . . . . . 62
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+PART II
+Mentalities. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 65
+Chapter 4 Abstraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+Justice . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 68
+Science . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 70
+Finance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 71
+The Moral of These Stories  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 74
+Playing God . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 76
+Translating Principle into Instance . . . . . . . . . . . . . . . . . . . . . . . . . . 78
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80
+Chapter 5 Verb Thinking . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 81
+Verb vs. Noun  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 82
+Case in Point: Multimedia . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 88
+Getting Started with Verb Thinking . . . . . . . . . . . . . . . . . . . . . . . . . 90
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 92
+Chapter 6 The Agony of Math . . . . . . . . . . . . . . . . . . . . . . . . . . . . 93
+Embracing Mathematics 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 94
+Causal Relationships . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 96
+Modeling as a Metaphor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 98
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 102
+Chapter 7 Two Cultures, No Hits, No Runs . . . . . . . . . . . . . . . . 103
+Neurophysiological Basis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 105
+History of Games and Stories  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 106
+Exhortations and Prognostications . . . . . . . . . . . . . . . . . . . . . . . . . 108
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 111
+Table of Contents  vii
+PART III
+Evolutionary Strategies . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 113
+Chapter 8 Branching Trees . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 115
+Overall Game Structure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 118
+The Solution: State Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 123
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 126
+Chapter 9 Interactive Fiction . . . . . . . . . . . . . . . . . . . . . . . . . . . . 127
+Text Adventures . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 128
+Graphic Adventures 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 128
+IF: Son of Text Adventure 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 129
+Puzzles  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 130
+A Real Example . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 131
+Under the Hood  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 133
+Is It Interactive Storytelling?. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 138
+The Future of IF  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 140
+Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 140
+Chapter 10 Role-Playing Games  . . . . . . . . . . . . . . . . . . . . . . . . . . 141
+The Verbs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 142
+Little Room for Creativity  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 143
+The Dangers of Overspecialization: Koalas vs. Goats . . . . . . . . . . 145
+What About MMORPGs? 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 147
+The Audience . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 149
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 150
+Chapter 11 Video Games . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 151
+Constipated Stories . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 152
+Multiple Endings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 153
+Branching Trees . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 154
+Open-Ended Stories . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 155
+Fully Player-Driven Stories 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 156
+Cost vs. Storytelling 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 156
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 158
+viii  Table of Contents
+PART IV
+Component Technologies . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 159
+Chapter 12 Modeling  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 161
+The Medium  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 162
+Basics  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 163
+Adding More Complexity 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 166
+Abstracting the Process . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 169
+Fine Points . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 172
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 175
+Chapter 13 Bounded Numbers  . . . . . . . . . . . . . . . . . . . . . . . . . . . 177
+Overruns. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 180
+Bounded Numbers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 181
+Bell Curves and People . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 183
+Technical Details . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 184
+The Blend Operator  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 185
+Boolean Calculations  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 189
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 192
+Chapter 14 Personality Models  . . . . . . . . . . . . . . . . . . . . . . . . . . . 193
+Complete . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 194
+Concise . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 194
+Orthogonal 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 194
+Behaviorally Discriminating 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 196
+Overspecific . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 197
+Types of Personality Traits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 198
+Expanding on the Three Core Personality Traits . . . . . . . . . . . . . . 203
+Physical Traits  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 204
+Moods 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 204
+Inclination Formulae  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 206
+Two Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 208
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 208
+Table of Contents  ix
+Chapter 15 Fate Makes the Storyworld Go ’Round . . . . . . . . . . . 209
+Listen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 210
+Think  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 213
+Speak 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 214
+Scoring . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 223
+Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 226
+Chapter 16 Verbs and Events . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 227
+Verb Counts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 228
+Generalized Verb Handling  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 229
+Sentence Structure 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 231
+Plans and Events . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 232
+HistoryBooks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 233
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 244
+Chapter 17 Languages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 245
+Using Devices to Talk . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 246
+The Sapir-Whorf Hypothesis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 247
+Faking Real Language . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 248
+Creating a New Language . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 258
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 267
+Chapter 18 Scripting Languages  . . . . . . . . . . . . . . . . . . . . . . . . . . 269
+Desiderata  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 270
+Sample Script for Text Generation  . . . . . . . . . . . . . . . . . . . . . . . . . 283
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 286
+Chapter 19 Engines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 287
+Event-Based Engines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 288
+Clock-Based Engines 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 288
+Plot-Based Engines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 295
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 296
+x  Table of Contents
+Chapter 20 High-Level Structures . . . . . . . . . . . . . . . . . . . . . . . . . 297
+Plot Points . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 298
+Goals . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 300
+Anticipation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 301
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 332
+PART V
+Wrapping Up . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 309
+Chapter 21 Academic Research . . . . . . . . . . . . . . . . . . . . . . . . . . . 311
+Comme il Faut . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 315
+Prom Week . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 316
+Release the Kraken! . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 316
+The IRIS Project  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 318
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 318
+Chapter 22 The Future . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 319
+It Will Be Big . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 320
+Negative Predictions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 321
+Positive Predictions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 322
+Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 325
+For Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . 327
+Books . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 327
+Conference Proceedings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 330
+Internet 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 330
+Index . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 332
+Introduction
+Interactive storytelling is a young field; first conceived in the late 1980s and first 
+experimented with in the 1990s, it did not attract substantial attention until the new 
+millennium. By 2010 it had become a hot topic. The field’s youth has endowed it 
+with a diversity of ideas and a cacophony of discussions. Like the proverbial elephant, 
+everybody perceives it from his or her own vantage point. Moviemakers see it as a 
+form of cinema, video-game people claim it as an extension of their own field, com-
+puter scientists think of it as part of the broader field of artificial intelligence, and 
+experts in the art of improv consider it to be the computerization of their skills. 
+The truth is that interactive storytelling is not an extension of or variation on 
+any of these fields; it must be approached as something new and unique. An 
+appreciation of all these fields (and several more) certainly helps you appreci-
+ate the challenges of interactive storytelling, but to use one of these fields as a 
+platform from which to launch your thinking is a grievous mistake. There is no 
+launching point; you must hurl yourself into the raging waters and kick, paddle, 
+and swim through as best you can.
+Many fields of study are based on combinations of other, more fundamental fields. 
+A good moviemaker must understand storytelling as well as optics, the human 
+visual system, and camera technology. A good game designer must understand 
+programming, games, and user interface issues. Interactive storytelling is no 
+different; indeed, it stands on the shoulders of many fields, including games, 
+cinema, storytelling, programming, and mathematics. Because interactive 
+storytelling is a new and poorly understood field, this book approaches it from 
+many different angles. It also devotes space to negative viewpoints; you can better 
+understand what interactive storytelling is if you appreciate what it isn’t.
+I wrote the first edition of this book in 2004; in the intervening years, everything 
+has changed except the underlying principles. This edition of the book explains 
+those principles with the greater clarity I have learned from eight years of work 
+on interactive storytelling. This second edition also presents more technical 
+details that will surely be superseded within 20 years, by which time I will have 
+prepared a third edition.
+xii
+Introduction
+A cautionary note: My writing style is unconventional and might set you aback. 
+(Here I express my gratitude to my editor, Robyn Thomas, for reining in my 
+worst excesses, straightening out my tangled prose, and saving me from my mis-
+anthropic tendencies.) My objective in writing is not to impress you with my 
+erudition, but to help you understand a difficult subject. I will goad you to think 
+about the material by presenting ideas in their strongest, starkest terms. I will not 
+waste your time with qualifiers and mush-mouthing nothingburger pap. You’re 
+smart enough to fill in the exceptions for yourself. If you find yourself in agree-
+ment with everything in this book, you haven’t been reading closely enough.
+I’d rather serve up chili than oatmeal. 
+My Interactive Storytelling Journey
+The starting point for my interactive-storytelling quest came way back in 1983 
+with the realization that when games finally matured as a medium of artistic 
+expression, they would have to be about people, not things. All other artistic and 
+entertainment media are fundamentally about people, but games were unique 
+in their obsession with things. In games, you chase things, things chase you; 
+you shoot things, and things shoot at you. You search for things, acquire things, 
+navigate things, move things, destroy things—it’s always things, things, things 
+and never any dramatically significant interactions with people in games. That, 
+I decided was the fundamental difference between games and other media, and 
+that was the central problem I had to tackle.
+What would a game about people look like? I came up with a simple idea for a 
+game based on interpersonal interactions. It was called Gossip, and all the player 
+did in the game was talk to people on the telephone about who likes or dislikes 
+whom. There were eight characters on the screen; the player was the one in the 
+upper left (Figure 1).
+The basic concept of the game was to call up other people and gossip about who 
+feels what about whom. By carefully calibrating your statements to the prefer-
+ences of your listener, you could build up your popularity.
+Sadly, Gossip came out not long before Atari collapsed, so it was a commercial failure. 
+Introduction
+xiii
+FIGURE 1 Gossip, my early game about people 
+I made my next attempt in 1987 with the design of Trust & Betrayal, a strange 
+game that I still consider to be the finest, most creative game I ever designed. By 
+then, I had identified the central problem for games about people to be the diffi-
+culty of language. You really can’t have much of an interaction with other people 
+if you can’t talk to them, so I decided that I had to come up with a language sys-
+tem (Figure 2).
+FIGURE 2 Trust & Betrayal, my self-professed finest and most creative game
+xiv
+Introduction
+FIGURE 3 Le Morte D’Arthur, a game that included a graphics system for presenting 
+individual character faces that could have different emotional expressions
+This game’s ploy is that it takes place on an alien world where different intel-
+ligent species communicate with each other by means of a telepathic language. 
+I created a simple language so I could represent it with a set of 87 icons. This 
+game also saw my first use of an inverse parser, a personality model, the empha-
+sis on verbs, face displays with emotional expressions, and interstitial stories. 
+It, too, was a commercial failure.
+But I wasn’t about to give up. In 1992, I began working on Le Morte D’Arthur 
+(Figure 3), a game about the Arthurian legends. For this game, I developed my 
+first general-purpose interactive storytelling engine. I also came up with a graph-
+ics system for presenting individual character faces that could have different 
+emotional expressions. 
+Introduction
+xv
+FIGURE 4 Erasmatron, a system for computer users to create their own storyworlds 
+Sadly, I couldn’t get funding to complete the game.
+A few years later, I got funding to develop an interactive storytelling system with 
+which typical computer users could build their own storyworlds. I got carried 
+away and built a huge system, called Erasmaton, that included a scripting lan-
+guage, a development editor, a powerful storytelling engine with advanced lin-
+guistic capabilities, and even an editor allowing the user to design unique faces 
+for each character (Figure 4).
+There was only one hitch: The system was far too complicated for anybody to 
+use, much less a typical user. We built some interesting storyworlds with it, but 
+they were incomplete and just weren’t entertaining. Erasmatron flopped.
+In 2007, I recruited Laura Mixon, Louis Dargin, and Facundo Dominguez to 
+build the next generation of my technology, dubbed Storytron (Figure 5). The 
+Storytron technology was a huge leap forward and it pioneered many of the 
+technologies presented in this book. Indeed, the stuff we had working was more 
+powerful than what I describe here.
+xvi
+Introduction
+FIGURE 5 A game created in Storytron 
+The problem with Storytron was the same problem that killed Erasmatron—
+it was too complicated. Despite an avid following of determined storyworld 
+authors, nobody was able to build a complete, working, entertaining storyworld. 
+I built one, Balance of Power 21st Century. It stank. We gave up on Storytron 
+in 2010.
+Since then, I’ve continued thinking about interactive storytelling, and have care-
+fully digested the many mistakes I made with previous efforts. I am resuming 
+work on the project, with some major new design concepts. With so many fail-
+ures behind me, how can I go wrong?
+PART I
+The Basics
+BEFORE YOU CAN UNDERSTAND interactive storytelling, 
+you need to get a good understanding of two things: interactivity and 
+storytelling. Then you need to get a grip on what happens when you 
+combine them.
+Chapter 1: Storytelling is ancient, much written about, and still not 
+fully understood. I can’t add anything to the massive literature about 
+storytelling as art, but in this chapter I offer a unique angle of approach: 
+neurophysiology.
+Chapter 2: Here we are 30 years into the personal computer revolution 
+and people still don’t understand interactivity. Think of it as a 
+conversation between the user and the computer. Tattoo Crawford’s First 
+Law of Software Design onto your navel.
+Chapter 3: When you put interactivity and storytelling together, you get 
+interactive storytelling, a completely new medium of expression. It’s not 
+cinema with interactivity superglued on; it’s not video games with story 
+superglued on; it’s a brand spanking new and unique medium.
+This page intentionally left blank 
+CHAPTER 1
+Storytelling
+OUR ICONIC IMAGE OF STORYTELLING is a circle of young 
+people around a campfire with an old man regaling them with a story. 
+This image evokes warm and cozy feelings of pleasure and camaraderie. 
+However, humankind did not actually develop storytelling as a leisure 
+activity to while away the hours—storytelling evolved for serious purposes, 
+as a necessary component in the development of human culture. 
+Imagine two kittens at play. One stalks the other, sneaking up from behind; 
+he pounces and the two kittens roll over each other, batting and kicking. 
+They’re so cute that we can’t help but laugh and envy the fun they must 
+be having. It’s true that the kittens are having fun, but they’re not playing 
+like this to pass the time in the months before cat adulthood. This is 
+serious business; they are learning the skills they’ll need to survive in the 
+real world. Stalking, pouncing, grappling, clawing, and biting: These are all 
+skills crucial in a cat’s life. Do you think it’s easy catching mice? I certainly 
+couldn’t. Consider this: Your best weapons (your fangs) are only an inch 
+away from the most vulnerable part of your anatomy (your eyes). Should 
+that mouse, in his struggles, succeed in clawing at your eye, you’d be blind 
+in one eye and your hunting—and eating—days would be over. So how do 
+you close in for the kill without risking your eyes?
+4
+Chapter 1
+This is a tricky problem and it requires a lot of practice to get it down pat. In fact, 
+every part of the hunt is tricky and requires lots of practice. That’s precisely what 
+kittens do for months on end: They stalk, they pounce, they grapple, they claw, 
+they kick, and they bite, alternating between roles as predator and prey. What we 
+call “kitten play” is first and foremost “cat education.” The fact that it’s obviously 
+fun is not a coincidence; fun is the emotional driver behind true learning.
+Storytelling serves people in a similar way. It’s not a waste of time; it’s serious 
+education about the complexities of social interaction. We have other forms of 
+play, of course, but storytelling is one of the most important forms of play. In 
+fact, storytelling is so important that we continue to enjoy it throughout our 
+lives. Without storytelling, humans never could have communicated complex 
+information and, therefore, could not have developed culture. Storytelling isn’t 
+merely characteristic of the human culture—it’s absolutely necessary to the exis-
+tence of human culture.
+The History of Storytelling
+Storytelling was a natural, almost inevitable consequence of human evolution. The 
+human brain developed in response to the environmental pressures facing early 
+hominids. Each major problem triggered some sort of change in the human body. 
+If a problem could be solved by mental effort, an existing part of the brain took 
+over that problem, often expanding as a consequence. Most of the time, these new 
+mental abilities were cobbled together from a combination of existing parts of the 
+brain, so they weren’t often localized to one region of the brain. As they developed, 
+these mental modules were recruited to solve new but related problems.
+Because mental modules aren’t localized tightly, scientists can’t pin them down 
+with anatomical precision. Brain function is so complex that one mental module 
+blends into the next. This makes the job of identifying mental modules a subjec-
+tive task; every scientist slices the pie a little differently. Nevertheless, some slices 
+seem to be more popular than others. Following are four basic mental modules: 
+visual-spatial, social reasoning, environmental knowledge, and language.
+ 
+>
+Visual-spatial handles visual perception and spatial imagination. We use 
+our visual-spatial modules to figure the distance to an object, determine its 
+shape (from its texture), and navigate through the environment. This is the 
+Storytelling
+5
+only well-localized mental module; it’s concentrated in an area at the rear 
+of the brain, which is why you see stars when you are struck on the back of 
+your head.
+ 
+>
+Social reasoning allows us to anticipate the likely behavior of others. Here’s 
+an example of social reasoning actually observed in chimpanzees: A troop 
+is out foraging, each one searching a different patch of ground. One chimp 
+spies a tasty piece of fruit. He realizes that the dominant chimp nearby will 
+take it away if he sees it, so the discoverer acts as if he’s seen nothing. Five 
+minutes later, when the others have moved on and the coast is clear, the dis-
+coverer sneaks back to the fruit and starts to eat it. At this point, the domi-
+nant chimp, who had noticed the first chimp’s odd behavior and anticipated 
+this development, leaps out from behind a tree and robs the first chimp of 
+his fruit. Consider all the computations that went into the thinking of both 
+chimps. Those computations are what we mean by social reasoning.
+ 
+>
+Environmental knowledge contains our memories of how things work in the 
+real world. Don’t think of it as a computer database, however, as it contains no 
+numbers. Instead, it takes the form of long lists of if-then statements.
+ 
+>
+If the animal’s track is sharply defined in soft dirt, then the animal 
+passed here recently. 
+ 
+>
+If the animal’s track is sharply defined in dried mud, then it passed here 
+some time ago. Even what we think of as recalled images and sounds are 
+actually constructs built of if-then facts. 
+ 
+>
+If the antelope’s horns are straight, smooth, and parallel, then it’s 
+a steenbok.
+ 
+>
+If the antelope’s horns have a spiral on them, then it’s an eland. 
+There are thousands of these relationships tucked away in our brains.
+ 
+>
+Language permits complex communication with others. But language has 
+dramatically changed the way our minds work. In the days before language, 
+things were simple. Any problem we encountered was routed to the appro-
+priate mental module, which then solved the problem as best it could and 
+directed our behavioral response. But language had to send its tentacles 
+6
+Chapter 1
+into every mental module; after all, you can’t talk about what you’re seeing 
+if your language module doesn’t have access to the visual-spatial module. 
+Thus, language links all the modules together. That linkage triggered a quan-
+tum leap in human thinking: Instead of a simple one-to-one relationship 
+between a problem and its appropriate mental module, now any mental 
+module could put its two cents’ worth into the solution. This triggered an 
+explosion of human creativity. It also rendered us less decisive. Nowadays, 
+we can’t be certain the first solution that pops into our minds is the best; a 
+better one might emerge from another module in a moment. So we hesitate.
+Two Mechanisms of Thinking
+There are two profoundly different mechanisms of thinking. The dominant 
+mechanism is pattern based. This is how nervous systems originally developed. 
+Pattern-based thinking is fast and powerful: A pattern of inputs enters the brain; 
+the brain processes the new pattern with its own patterns, producing a pattern 
+of responses. For example, a small animal looks upon a scene and sees a pattern 
+that includes large teeth, eyes, and big claws. The small animal’s brain processes 
+that pattern and almost instantly determines an output pattern: It activates dif-
+ferent muscles in its body to turn and run.
+This pattern-based thinking has a crucial benefit: No matter how vague or inde-
+terminate the input pattern, brains can interpret that pattern in some fashion. 
+We look at clouds and see faces or animals; dark shapes in the night seem like 
+monsters and ghouls. Faint noises in the wind sound like voices.
+However, about one or two hundred million years ago, a new mechanism devel-
+oped: sequential thinking. Pattern-based thinking is instantaneous; it cannot 
+fathom the significance of sequences of events. For example, let’s imagine two 
+early rat-like mammals rummaging around on the late Jurassic forest floors of 
+150 million years ago. One of our ancient rats has a brain with only pattern-
+based processing. The second rat-mammal, however, is equipped with the latest 
+neural technology: sequential processing. Now, suppose a big nasty dinosaur 
+comes their way, looking for a nice mammal burger. They both hear its footfalls 
+and scurry to hide. The dinosaur looks around, sees nothing, and clomps away. 
+The old-style pattern-processing rat hears heavy footfalls and thinks, “Ack! Heavy 
+Storytelling
+7
+footfalls! Danger!” So, he stays in hiding. But the rat with the hot new sequential 
+processing recognizes that the sequence of footfalls shows them growing progres-
+sively weaker. He thinks, “Weakening footfalls. He’s going away,” and emerges 
+from hiding to resume his search for food. The second rat literally eats the first 
+rat’s lunch. Guess which rat species goes extinct?
+There’s a nasty catch here: Neurons in the brain aren’t designed to handle 
+sequential reasoning. It takes quite a kludge to get them to carry out sequential 
+tasks and demands a lot of neurons. The advantages of sequential thinking, how-
+ever, are so great that many animals, most notably mammals, spent millions of 
+years developing ever larger and more complex brains, with most of that expan-
+sion handling the expensive sequential processing mechanism. Our monstrously 
+large brains evolved to handle the extremely complex sequential processing in 
+which we humans specialize. 
+The older visual-spatial and social reasoning mental modules rely entirely on 
+pattern-based thinking. The environmental knowledge module uses a mixture 
+of pattern-based thinking and sequential thinking. But the language module is 
+almost entirely sequential in structure. Think about it: A word is a sequence of 
+sounds, and a sentence is a sequence of words, and this book is a sequence of 
+sentences. Language uses a lot of sequential processing.
+Mental Modules Interact
+Once the development of language had pulled the mental modules into com-
+munication, all sorts of fascinating interactions began between the modules. 
+For example, the environmental knowledge module and the social reasoning 
+module interacted in a surprising fashion. The environmental knowledge mod-
+ule impelled humans to inquire into the causes of phenomena they observed in 
+their environment, trying to find a simple if-then rule to store in memory. But 
+the world is a complicated place, and all too often a clear cause was wanting. For 
+example, an especially important question for the early farmers was, “Why does 
+it rain?” Or, more to the point, “Why does it sometimes fail to rain?” 
+When language put the environmental knowledge module in touch with the 
+social reasoning module, these two modules interacted to devise an answer that 
+made sense: Powerful people—gods—caused natural phenomena. Whenever a 
+8
+Chapter 1
+phenomenon lacked an obvious cause, assigning the phenomenon to a god and 
+then explaining the apparently erratic behavior with the deity’s mood swings was 
+a simple matter. Not only did the social reasoning module suggest an explana-
+tion to the problem, but it also offered the solution: propitiate the god. Every 
+time a new problem cropped up, a priest revealed another new god who con-
+trolled that phenomenon. Thus, most ancient societies had a large pantheon of 
+gods, each with his or her own particular physical jurisdiction. In ancient Greece, 
+for example, you made a sacrifice to Poseidon before undertaking a sea voyage; 
+since he ruled the waves, his goodwill was nice to have. Going to war? Better be 
+in good graces with Ares. Problems with your love life? Aphrodite is the one to 
+curry favor with. And so on.
+Because the gods seemed so arbitrary, it behooved society to have someone on 
+hand who could communicate with the gods. There was never any shortage of 
+applicants for the position; whoever communicated with the gods was, essen-
+tially, in charge of the society.
+But the environmental knowledge module also interacted with the language 
+module, producing “sequential thinking environmental knowledge,” also known 
+as science. Sequential thinking at this level took a long time to develop, but once 
+the ideas of logic and mathematics took hold, science took off. The conflict 
+between science and religion becomes clearer when viewed this way. Both arose 
+from the environmental knowledge module; both attempt to explain the world 
+in which we live. Religion takes the social reasoning route, and science takes the 
+sequential logic route. The choice between them might have more to do with the 
+relative strengths of these two modules inside a person’s mind than anything else.
+There are four more interactions between modules to consider. I lump two of 
+them together: The combination of the visual-spatial module with the environ-
+mental knowledge and social reasoning modules to produce representational art.
+When visual-spatial reasoning combined with the language module, we got writ-
+ing, which triggered its own cultural revolution. And when the language module 
+combined with the social reasoning module, it produced storytelling.
+For those whose spatial reasoning module is stronger than their verbal reasoning 
+module, Figure 1.1 shows a summary of these results.
+Storytelling
+9
+Visual arts
+Science
+Visual-spatial
+Social
+Writing
+Religion
+Storytelling
+Language
+Environmental 
+knowledge
+FIGURE 1.1 The mental modules interact
+How Storytelling Arose
+Storytelling is a linguistic action, so it should come as no surprise that story-
+telling arose from language. The smallest meaningful linguistic expression is a 
+sentence; words by themselves communicate little. A sentence communicates 
+important information, such as “The antelope is running away.” Put that same 
+sentence into past tense and you have a tiny story. Indeed, it’s difficult to disen-
+tangle past tense from storytelling. Thus, storytelling was the inevitable result of 
+the development of language.
+Storytelling is universal: Anthropologists have never found a culture bereft of 
+a storytelling tradition. Why is storytelling universal? The obvious answer, of 
+course, is that stories are the vehicle by which cultural knowledge is communi-
+cated from one generation to the next. They’re not the only vehicle, of course, 
+but they certainly play an important role in transferring cultural information. 
+Storytelling, language, and culture developed together.
+But why should information be transmitted by stories? Why couldn’t cultures sim-
+ply compile their knowledge into a simple, compact list of important truths—and 
+then impart those truths by requiring every young person to memorize the list? 
+This approach seems quicker and more efficient than the long-winded storytelling 
+system, so why didn’t any culture ever adapt such a superior alternative?
+10
+Chapter 1
+The answer has to do with the character of the information transmitted. Most of 
+the informational content of these stories pertains to social reasoning. Some per-
+tains to the environmental knowledge module, but the bulk of these stories con-
+cern interpersonal behavior: trustworthiness, faithfulness, perseverance, and so 
+forth. The mental module for social relationships relies on pattern recognition, 
+which raises an ugly problem: How do you communicate pattern-type informa-
+tion to a pattern-recognizing mental module using a sequential medium such as 
+language? In computer terms, it’s like trying to send parallel data down a serial 
+cable. It’s like speaking Chinese to a Spaniard. The data is in the wrong format!
+What’s needed is a reformatter—something that converts one thinking mecha-
+nism to the other. Storytelling is that reformatter. It’s an ad-hoc solution to an 
+interfacing problem that arose early in the development of language.
+Consider that a story is a linear sequence of events; its architecture is referred to 
+as a plotline. That linearity is the inevitable outcome of using language to relate 
+the story: You can’t tell a story all at once. A story must be told step by step, event 
+by event. Yet you can’t understand the story fully until you receive the entire 
+content. If you’re downloading your email and the transmission link breaks 90 
+percent of the way through, you can still read the email and figure out most of 
+its content. But if you’re watching a movie in a theater and the projector breaks 
+90 percent of the way through, you have every right to demand a 100 percent 
+refund; without that last 10 percent, the story never snaps into place.
+Stories are patterns broken down into a linear sequence. How does that happen? 
+I’ll use a visual metaphor to clarify what happens (well, it’s clear to visual think-
+ers). Imagine your knowledge to consist of a meshwork of connected ideas. A 
+young hunter’s knowledge of antelope might look something like the diagram in 
+Figure 1.2. The specific positions of the individual ideas are arbitrary; what mat-
+ters is their pattern of connections.
+Now, imagine a hunter telling this story about hunting the antelope:
+We were out hunting when we saw some antelope in the distance. We were almost 
+close enough to throw rocks and hit them. But then the wind came up, and it was 
+blowing in the direction from us to them. The antelope smelled us and ran away.
+Now, let’s draw a schematic diagram of the relationships between the events of 
+the story (Figure 1.3).
+Storytelling
+11
+Antelope
+meat tastes 
+good.
+You throw 
+rocks at an 
+antelope to 
+kill it.
+Barbecued
+antelope
+meat tastes 
+better.
+You have 
+to kill an 
+antelope to 
+eat it.
+You have to 
+carry a dead 
+antelope
+home.
+To kill an 
+antelope,
+you have to 
+hunt it.
+Antelope
+run fast.
+You have to 
+get close to an 
+antelope to 
+kill it.
+FIGURE 1.2 Schematic of knowledge in the mind
+We got close 
+to the 
+antelope.
+We hunted 
+the antelope.
+The antelope 
+ran away.
+The wind 
+blew our scent 
+to the 
+antelope.
+The antelope 
+smelled us.
+FIGURE 1.3 The story of hunting the antelope
+12
+Chapter 1
+Antelope
+meat tastes 
+good.
+You throw 
+rocks at an 
+antelope to 
+kill it.
+Barbecued
+antelope
+meat tastes 
+better.
+You have 
+to kill an 
+antelope to 
+eat it.
+You have to 
+carry a dead 
+antelope
+home.
+To kill an 
+antelope,
+you have to 
+hunt it.
+Antelope
+run fast.
+You have to 
+get close to an 
+antelope to 
+kill it.
+We got close 
+to the 
+antelope.
+We hunted 
+the antelope.
+The antelope 
+ran away.
+The wind 
+blew our scent 
+to the 
+antelope.
+The antelope 
+smelled us.
+FIGURE 1.4 Merging the story with existing knowledge
+The young hunter superimposes this story onto his existing knowledge of ante-
+lope (Figure 1.4).
+The young hunter can readily see the parallels between his own knowledge and 
+the story. However, he’s not finished. That night, while he dreams, his brain reor-
+ganizes his associative memory to integrate the experiences of the day into the 
+existing knowledge. In the morning, the young hunter will have this new knowl-
+edge structure (Figure 1.5).
+Storytelling
+13
+The wind 
+blew our scent 
+to the 
+antelope.
+The antelope 
+smelled us.
+Antelope
+meat tastes 
+good.
+You throw 
+rocks at an 
+antelope to 
+kill it.
+Barbecued
+antelope
+meat tastes 
+better.
+You have 
+to kill an 
+antelope to 
+eat it.
+You have to 
+carry a dead 
+antelope
+home.
+To kill an 
+antelope,
+you have to 
+hunt it.
+Antelope
+run fast.
+You have to 
+get close to an 
+antelope to 
+kill it.
+FIGURE 1.5 After integrating the story into existing knowledge
+This is the simplest way we learn from storytelling. But there’s another, even 
+more important way that storytelling changes our memories: It can alter exist-
+ing knowledge.
+Now, suppose the young hunter listens to another story. I’ll leave out most of 
+the story to focus your attention on the crucial part:
+We kept throwing rocks at the antelope and hurt it so it couldn’t run as fast. 
+We closed in on the antelope and caught it. We smashed its head with big rocks. 
+That killed it.
+14
+Chapter 1
+That slowed 
+it down.
+We threw 
+rocks at the 
+antelope.
+We caught 
+it and smashed 
+its head with 
+rocks.
+We killed 
+the antelope.
+FIGURE 1.6 A fragment of a story
+Figure 1.6 shows a schematic of what the story fragment might look like.
+The young hunter will easily match up the new story with his existing network 
+of knowledge about antelope (Figure 1.7).
+Here’s the important part: That night, when the young hunter dreams and inte-
+grates the new knowledge into his memory, the brain will also tidy up the mem-
+ory structure to make it neater.
+Note that the previous connection between killing the antelope and throwing 
+rocks at it has been broken: Throwing rocks doesn’t kill antelope—it slows them 
+down. Smashing its head with a big rock is how you actually kill an antelope. 
+Two new bits of knowledge have been added to the network. Also note that the 
+positions of the two original bits of knowledge (“you throw rocks…” and “you 
+have to kill…”) have shifted somewhat. Some associations have been made more 
+distant while some are now closer. That’s what happens whenever you learn 
+something: Everything associated with it in your memory shifts somewhat. 
+Storytelling
+15
+The wind 
+blew our scent 
+to the 
+antelope.
+The antelope 
+smelled us.
+Antelope
+meat tastes 
+good.
+You throw 
+rocks at an 
+antelope to 
+kill it.
+Barbecued
+antelope
+meat tastes 
+better.
+You have 
+to kill an 
+antelope to 
+eat it.
+You have to 
+carry a dead 
+antelope
+home.
+To kill an 
+antelope,
+you have to 
+hunt it.
+Antelope
+run fast.
+You have to 
+get close to an 
+antelope to 
+kill it.
+That slowed 
+it down.
+We threw 
+rocks at the 
+antelope.
+We caught 
+it and smashed 
+its head with 
+rocks.
+We killed 
+the antelope.
+FIGURE 1.7 Superposing the story onto memory
+The “Aha!” Insight
+This learning process can sometimes produce radical changes in the way we 
+think; sometimes those radical changes take place consciously. Martin Gardner 
+called these Aha! insights because we can’t help but exclaim something like “Aha!” 
+or “I’ll be a monkey’s uncle!” (and because I’ll be a monkey’s uncle insights just 
+doesn’t sound right).
+Aha! insights occur when our network of ideas suddenly transforms into a very 
+different shape. (See Chapter 2, “Interactivity,” for more on the “Aha!” insight.)
+Storytelling was invented thousands of years ago and remains the most powerful 
+medium for communicating complex interrelated ideas.
+16
+Chapter 1
+The Nature of Stories
+So much has been written about the nature of stories that it seems cheeky for me 
+to throw in my own two cents’ worth. Nevertheless, there are a few fundamental 
+points I want to emphasize, if only to get you oriented toward the concepts that 
+underlie this book.
+Strong Structure
+Stories must satisfy tight structural requirements to be acceptable. Many defini-
+tions I have seen strike me as too academically broad. Yes, any sequence of state-
+ments can be construed to be a story, but only in the most academic of senses. 
+I can’t specify the structure of stories, but I can point out that even a 4-year-old 
+child has a solid grasp of the concept of story. Here are two examples to run past 
+your neighborhood 4-year-old:
+The itsy-bitsy spider crawled up the water spout.
+Down came the rain and washed the spider out. 
+Out came the sun and dried up all the rain.
+And the itsy-bitsy spider crawled up the spout again.
+Here you have a clear, simple story in four lines. It has a protagonist (spider), 
+conflict (the rain), struggle (being washed out), resolution (crawled back up), 
+and even a moral (the value of perseverance).
+Here’s another story:
+Once upon a time, there was a handsome young prince who lived in a shining 
+castle. One day he mounted his beautiful white steed and rode out of the castle 
+into the forest. In the forest, his horse fell into a hole and they both died.
+This story has most of the elements of many stories: the classic “Once upon a time” 
+opening, a handsome prince, a beautiful white horse, a castle, and a forest. These 
+elements are quite conventional, but the ending is not at all what’s expected. Tell 
+this story to 4-year-olds and they’ll cry out, “That’s not a story!” They’d be right. 
+Whatever structural elements this pseudo-story has, it can’t be called a proper 
+story because it violates some fundamental expectations about stories.
+Storytelling
+17
+I challenge you to devise a set of rigorous criteria for defining stories, a set that 
+would accept the itsy-bitsy spider story while rejecting the prince who died story. 
+I certainly can’t meet that challenge.
+Lesson 1
+Stories are complex structures that must meet many hard-to-specify 
+requirements.
+People
+Stories are about people. This is such a simple, basic truth that it’s often lost in 
+the high-falutin’ analysis of narrative theory. Sometimes the reference to people 
+is indirect or symbolic—as in the case of the itsy-bitsy spider, which isn’t a 
+person but is understood by the audience to represent a person. An extreme 
+example of this indirection is offered by the movie Koyaanisqatsi, which lacks 
+a protagonist or dialogue. The movie presents an artful sequence of images of 
+nature contrasted with the world of civilization. Yet the story is strong, clear, and 
+beautifully summarized in the final extra-long shot of a rocket ascending higher 
+and higher into the atmosphere and exploding. The camera centers on the larg-
+est fragment and follows it down, down, down. The symbolism is intense and 
+powerful; this movie is about what we have become.
+In addition to exalting the role of people in stories, storytellers minimize the 
+role of things. You must concentrate your attention on the people in stories and 
+simultaneously reject any significant role for things.
+But there are plenty of stories that revolve around things. What about 
+The Maltese Falcon, Raiders of the Lost Ark, and The Lord of the Rings?
+No, the objects in the cited stories do not play central roles. The Lord of the Rings,
+for example, is not about the ring, but about Frodo’s struggle. Replacing the 
+ring with a magic sock or hat or eyeglasses would not have changed the story 
+much. Replacing Frodo with, say, Han Solo, Don Quixote, or Huck Finn would 
+have changed the story beyond recognition. This simple truth—that stories are 
+about people, not things—explains the utter failure of games to incorporate 
+storytelling in any but the most mechanical and forced manner. Games concern 
+18
+Chapter 1
+themselves with things: things you acquire, things you use, things you destroy, 
+and so on. That’s why they’re so emotionally crippled—dramatic power comes 
+from people and their problems, not things. Games aren’t antisocial; they’re aso-
+cial. They just don’t bother with people other than as walking dolls that perform 
+mechanical functions. 
+Lesson 2
+People, not things!
+Conflict
+All stories have some sort of conflict. Sometimes the conflict is direct and vio-
+lent, as in Star Wars or The Lord of the Rings. The good guys wear white hats, and 
+the bad guys wear black hats. The good guys are handsome and noble, and the 
+bad guys are missing some teeth and have bad breath. Youngsters with their sim-
+plistic view of the universe favor such stories. But there are stories in which the 
+conflict is more indirect as well. Sometimes the conflict is social, sometimes it’s 
+symbolic, but there’s always some sort of conflict. 
+The second Jurassic Park movie illustrates indirect conflict. The primary con-
+flict is between the mathematician and the soulless businessman; the conflict 
+is established early in the movie when the mathematician tugs at the business-
+man’s sleeve and the businessman warns “Careful. This suit cost more than 
+your education.” As the story progresses, dinosaurs rampage with toothy glee, 
+chomping and stomping people in horrifically entertaining ways, but they aren’t 
+the antagonists. Indeed, the dinosaurs are presented as something like “noble 
+savages,” devoid of evil intent, merely acting out their reptilian instincts with 
+dinosaur integrity. The central conflict of the movie is indirect: The businessman 
+gives orders to his minions, and the mathematician opposes him with vain pleas 
+and dark warnings. Spielberg could have moved all the dinosaurs offstage, saving 
+millions of dollars, without compromising the integrity of the story—although it 
+wouldn’t have been nearly as much fun.
+Well, here at least is one place where games shine.
+Storytelling
+19
+Not exactly. It’s true that games have plenty of conflict, but it usually takes the 
+simplest and most direct form: violence. Games are deficient in other forms of 
+conflict, such as social conflict. The game designer’s spice shelf has lots of sugar 
+and nothing else.
+Lesson 3
+Stories are about conflict, most commonly social conflict. Violent conflict is 
+for simple stories.
+What about Macbeth, Hamlet, or Romeo and Juliet? Those plays end with 
+everybody dying. Would you dismiss them as simplistic?
+The violence in those plays is not part of the conflict—it’s part of the resolution. 
+A brutally short summation of all three plays is this: “A profound personal con-
+flict was tragically resolved in violence.” In storytelling terms, the violence is the 
+denouement, not the climax.
+Puzzles
+Stories are not puzzles. It’s true that puzzles often form a part of the story; 
+indeed, puzzles play a large role in mystery stories. The puzzles in a mystery story 
+are primarily about people, however. The bulk of the story is devoted to detailing 
+the sleuth’s machinations in getting people to reveal crucial clues to the mystery.
+But there’s also plenty of nonsocial sleuthing going on. Take the television 
+series CSI, for example. It’s about using science rather than interpersonal 
+skills to solve crimes, and it has been a big hit.
+True, but the science is not what gives the stories their power. The gee-whiz tech-
+nology is certainly fun, but the strong characters and often poignant storylines 
+are the true strengths of the stories. Without those strong character interactions, 
+CSI would be a run-of-the-mill whodunit.
+A story always contains some kind of problem or challenge: How will the protago-
+nist resolve the conflict of the story? If this problem is an intellectual one requir-
+ing a logical solution, it’s called a puzzle. Nonetheless, the exercise of intellectual 
+20
+Chapter 1
+legerdemain is seldom central to stories. Sometimes, the protagonist recruits other 
+characters to assist with the solution of the puzzle or undergoes a major personal-
+ity change to discover the solution to the puzzle. The greatest stories provide chal-
+lenges that are personal or social in nature, not logical or intellectual.
+Lesson 4
+Puzzles are not a necessary component of stories.
+Choices
+Ultimately, stories concern the choices that characters make. Indeed, the entire 
+point of many stories is revealed through a key choice the protagonist makes. 
+In Star Wars, it’s “Trust the Force, Luke.” In Macbeth, it’s the decision to murder 
+for ambition. In the third Matrix movie, it’s Neo’s decision to sacrifice himself. 
+In many versions of the Arthurian legends, it’s Guinevere’s decision to act on 
+her love for Lancelot. In each of these examples, the entire story builds up to or 
+revolves around a key decision.
+But the key decision is only the most dramatically salient one; other choices 
+throughout the story establish character. Neo is reluctant to accept his role as 
+the savior of humanity; he expresses that reluctance in a hundred small actions. 
+Slowly Neo comes to accept the truth; again, his acceptance is established by the 
+decisions he makes, demonstrating greater confidence in his skills. 
+Spectacle
+Novel experiences provide a certain amount of entertainment value arising solely 
+from the fact that they’re new. Sometimes you try out an exotic food merely for 
+the simple pleasure of tasting something you’ve never tasted before. A great deal 
+of music, especially popular music, relies on including odd new sounds. Rock 
+music revels in unconventional sounds: The electric guitar, feedback effects, the 
+fuzzbox, and other such acoustic effects play a major role in rock music.
+The visual form of this pleasure from novelty is spectacle, providing exotic imagery 
+as a form of entertainment. Spectacle dominates the movies these days. The very first 
+movies were spectacles without stories—trains crashing and so forth. Star Wars in 
+1977, Jurassic Park in 1991, and The Matrix in 1999 exemplify the appeal of spectacle.

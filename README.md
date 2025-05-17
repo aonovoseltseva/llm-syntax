@@ -1,3 +1,14 @@
+# Example usage
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Run script without evaluation
+python3 llm_parse.py --eval False --input "data.txt" --output "parsing.txt"
+```
+
 ## Hypotheses
 
 Hypothesis 0: Despite AI hallucinations, properly prompted LLMs can be used for syntax parsing without additional functionality (to prove this, we want to collect data on their mistakes)
