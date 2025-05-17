@@ -16,5 +16,6 @@ LLM as a natural language interface
 - Functions for parsing + Script from Hypothesis
 
 TODO:
-1. def parsing() -> nltk
-2. 
+1. def parsing() -> nltk, spacy
+2. def generate_grammar() -> nltk
+3. def visualize(): LLM generates code for visualization
