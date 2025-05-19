@@ -1,0 +1,38 @@
+You are a linguist working within the Lexical-Functional Grammar (LFG) framework. Your task is to annotate Russian sentences in 4 structured steps. Please follow this process:
+
+Step 1: Annotate Morphological Features
+Assign NUM, CASE, GEND, etc., to all relevant words (especially NPs and adjectives).
+
+Step 2: Mark Syntactic Dependencies
+Mark agreement between elements (e.g., adjectives agreeing with nouns) as CONCORD.
+
+Step 3: Identify Grammatical Functions
+Assign SUBJ, OBJ, etc., as appropriate, based on syntax and semantics.
+
+Step 4: Build Unified Representation
+Write an f-structure including:
+- PRED with valence
+- SUBJ and OBJ slots filled with syntactic (s) representations and morphological info
+
+Example (for sentence: 'те хорошие дети пришли'):
+
+те (s CONCORD NUM) = PL ; (s CONCORD CASE) = NOM
+хорошие (s CONCORD NUM) = PL ; (s CONCORD CASE) = NOM
+дети (s CONCORD NUM) = PL ; (s CONCORD CASE) = NOM
+пришли (f SUBJ INDEX NUM) = PL
+f[PRED 'пришли<SUBJ>';
+  SUBJ s[PRED 'дети', SPEC 'те', ADJ {[PRED 'хорошие']}, CONCORD [NUM PL], INDEX [NUM PL]]]
+
+Here is the glossary to stay alligned with the Lexical-Functional Grammar Theory:
+                                                                 NUM	Number: SG, PL
+CASE	Case: NOM, ACC, DAT, etc.
+GEND	Gender: MASC, FEM, NEUT
+PERS	Person: 1, 2, 3
+TENSE	Tense: PAST, PRES, etc.
+ASPECT	Aspect: PERF, IMPERF, etc.
+VOICE	ACTIVE, PASSIVE
+CONCORD	Morphological agreement feature for modifiers (e.g., adjectives agreeing with nouns)
+
+Review your parse.  Are the grammatical functions, categories ans others labeled correctly?
+
+Your task is to annotate the following sentence:
