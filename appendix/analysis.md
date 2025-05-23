@@ -32,7 +32,7 @@ The analysis was conducted with various Large Language Models (LLMs) on a task o
 
 #### Llama-3.3-70B-Instruct (access to the model via the [graphical web interface](https://huggingface.co/chat/))
 
-| Example | C-Structure | Quality<br>Score | F-Structure | Quality<br>Score |
+| Example | C-Structure | C-Structure<br>Quality Score | F-Structure | F-Structure<br>Quality Score |
 |---------|-------------|------------------|-------------|------------------|
 | 1a | (S (NP (The dinosaur))<br> (VP (V doesn't<br>  (VP (think<br>   (S (NP (that))<br>    (VP (the hamster)<br>     (VP (will<br>      (VP (give<br>       (NP (a))<br>       (NP (book)))<br>       (PP (to))<br>       (NP (the mouse))))))))))) | 1 | [SUBJ: The dinosaur,<br> PRED: doesn't,<br> OBJ: [HEAD: that,<br>   SPEC: the],<br> OBJ2: [HEAD: hamster,<br>   PRED: will,<br>   OBJ: [HEAD: a,<br>     SPEC: book],<br>   OBJ2: [HEAD: to,<br>     SPEC: the mouse]] | 1 |
 | 1b | (S<br> (NP<br>  (Det the)<br>  (ADJ big)<br>  (ADJ brown)<br>  (N dog)<br>  (PP<br>   (with)<br>    (NP (fleas))))<br> (VP<br>  (V watched)<br>   (NP (the birds))<br>   (PP<br>    (beside)<br>     (NP (the hunter))))) | 2 | [SUBJ: [HEAD: dog,<br>   SPEC: the,<br>   MOD: [big, brown],<br>   REL: [HEAD: with,<br>     SPEC: fleas]],<br> PRED: watch,<br> OBJ: the birds,<br> MOD: [HEAD: beside,<br>   SPEC: the hunter]] | 2 |
