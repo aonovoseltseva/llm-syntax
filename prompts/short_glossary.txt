@@ -21,18 +21,31 @@ Example (for sentence: 'те хорошие дети пришли'):
 дети (s CONCORD NUM) = PL ; (s CONCORD CASE) = NOM
 пришли (f SUBJ INDEX NUM) = PL
 f[PRED 'пришли<SUBJ>';
-  SUBJ s[PRED 'дети', SPEC 'те', ADJ {[PRED 'хорошие']}, CONCORD [NUM PL], INDEX [NUM PL]]]
+  SUBJ s[PRED 'дети', SPEC 'те', ADJ {[PRED 'хорошие']}, CONCORD [NUM PL], INDEX [NUM PL]]]"""
 
-Here is the glossary to stay alligned with the Lexical-Functional Grammar Theory:
-                                                                 NUM	Number: SG, PL
+"""Here is the glossary to stay alligned with the Lexical-Functional Grammar Theory:
+NUM	Number: SG, PL
 CASE	Case: NOM, ACC, DAT, etc.
 GEND	Gender: MASC, FEM, NEUT
 PERS	Person: 1, 2, 3
 TENSE	Tense: PAST, PRES, etc.
 ASPECT	Aspect: PERF, IMPERF, etc.
 VOICE	ACTIVE, PASSIVE
-CONCORD	Morphological agreement feature for modifiers (e.g., adjectives agreeing with nouns)
+CONCORD	Morphological agreement feature for modifiers (e.g., adjectives agreeing with nouns)"""
 
-Review your parse.  Are the grammatical functions, categories ans others labeled correctly?
+"""Guidelines for generating high-quality constituent and functional structures according to Lexical-Functional Grammar:
+Constituent Structure (c-structure):
+Each wordform must be preceded by a preterminal node   indicating its grammatical class (e.g., N, V, D, A).
+The number of  opening and closing brackets  must be equal — ensure balanced structure.
+All words from the input sentence must appear exactly once  in the c-structure, in the correct order. No duplications.  
+Follow standard phrase structure conventions (e.g., S → NP VP, NP → D A N, etc.).  
+Functional Structure (f-structure):   
+Ensure that the output satisfies the three well-formedness conditions as defined by Kaplan & Bresnan:  
+1.  Coherence  — All grammatical functions in the f-structure must be licensed by the predicate's subcategorization frame. No extra functions.  
+2.  Completeness  — All required grammatical functions from the predicate's argument structure must be present in f-structure. No omissions.  
+3.  Consistency (Unification)  — Attribute values must not conflict. Each attribute (e.g., NUM, CASE) must have a unique, non-contradictory value.  
+                                                              
+These constraints are essential for syntactic and semantic correctness. Use them to verify and revise any proposed annotation of the sentence."""
 
-Your task is to annotate the following sentence:
+"Your task is to annotate the following sentence: 'эти зеленые деревья зацвели' "
+"Review your parse.  Are the grammatical functions, categories ans others labeled correctly?
