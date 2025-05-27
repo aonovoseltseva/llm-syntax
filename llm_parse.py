@@ -81,13 +81,13 @@ def main():
     result3 = parse(system_prompt_3, user_prompt)
   
     # Далее записываем выдачу с каждой функции в файл, указанный в output 
-with open(output_path, 'w')
-    f.write("Вариант разметки 1\n")
-    f.write(result1 + "\n\n")
-    f.write("Вариант разметки 2\n")
-    f.write(result2 + "\n\n")
-    f.write("Вариант разметки 3\n")
-    f.write(result3 + "\n")
+    with open(output_path, 'w'):
+        f.write("Вариант разметки 1\n")
+        f.write(result1 + "\n\n")
+        f.write("Вариант разметки 2\n")
+        f.write(result2 + "\n\n")
+        f.write("Вариант разметки 3\n")
+        f.write(result3 + "\n")
     
 if __name__ == "__main__":
     main()
