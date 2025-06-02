@@ -66,5 +66,4 @@ Ensure that the output satisfies the three well-formedness conditions as defined
                                                               
 These constraints are essential for syntactic and semantic correctness. Use them to verify and revise any proposed annotation of the sentence."""
 
-"Your task is to annotate the following sentence: 'эти зеленые деревья зацвели' "
-"Review your parse.  Are the grammatical functions, categories ans others labeled correctly?
+"As an output give only the f- , c- and complex structures"
