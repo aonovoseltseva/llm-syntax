@@ -3,9 +3,6 @@ import torch
 import pandas as pd
 from transformers import AutoTokenizer, BitsAndBytesConfig, Gemma3ForCausalLM
 
-
-
-
 parser = argparse.ArgumentParser(description="Инструмент для парсинга синтаксической структуры")
 print("parser started")
 parser.add_argument("--prompts", type=str, required=True, help="Путь к файлу с тестовыми данными")
@@ -94,9 +91,7 @@ def collect_outputs(prompt, chunk_file):
         chunk_text = f.read()
     print(f"     Chunk text length: {len(chunk_text)} characters")
 
-    # Build the chat message format
     messages = [
-        [
             {
                 "role": "system",
                 "content": [{"type": "text", "text": prompt}],
@@ -105,8 +100,15 @@ def collect_outputs(prompt, chunk_file):
                 "role": "user",
                 "content": [{"type": "text", "text": chunk_text}],
             },
-        ]
-    ]
+
+            # Форматирование ответа
+            response_format = [
+            {
+                "type": "json_object"
+            },
+        
+            ]
+                ]
     print(f"     Messages created: {len(messages)} outer items, {len(messages[0])} inner messages")
 
     print("     Tokenizing messages...")
@@ -133,6 +135,8 @@ def collect_outputs(prompt, chunk_file):
     print(f"     Model device: {model.device}")
 
     print("     Generating model output...")
+
+
     try:
         with torch.inference_mode():
             outputs = model.generate(
@@ -153,6 +157,7 @@ def collect_outputs(prompt, chunk_file):
     except Exception as e:
         print(f"     Decoding failed: {e}")
         return
+                                           
 
     match = re.findall(r'<start_of_turn>(.*?)<end_of_turn>', decoded[0], re.DOTALL)
     result = match[1] if len(match) > 1 else "NO_MATCH"
