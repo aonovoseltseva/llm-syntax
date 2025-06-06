@@ -11,14 +11,14 @@ eval_mode = args.eval
 input_path = args.input
 output_path = args.output
 
-model_id = "google/gemma-3-1b-it"
+model_id = "ai-sage/GigaChat-20B-A3B-instruct"
 
 # Применяем квантизацию: загружаем модель меньшей размерности
 quantization_config = BitsAndBytesConfig(load_in_8bit=True)
 
 # Инициализация модели из HuggingFace: загружается локально на наше устройство
 # Это значит, что она не использует сторонние сервисы, а все вычисления выполняются у нас
-model = Gemma3ForCausalLM.from_pretrained(
+model = GigaChat-20B-A3B-instruct.from_pretrained(
     model_id, quantization_config=quantization_config
 ).eval()
 
@@ -26,14 +26,14 @@ model = Gemma3ForCausalLM.from_pretrained(
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 
 # Подгрузка промптов с файла
-with open('prompts_ud_gemma/short_glossary.txt') as f1:
+with open('prompts_ud_gigachat/short_glossary.txt') as f1:
     system_prompt_1 = f1.read()
 # Задача: подставить сюда еще 2 промпта под новыми переменными
 ## TODO ##
-with open('prompts_ud_gemma/long_glossary_prompt.txt') as f2:
+with open('prompts_ud_gigachat/long_glossary_prompt.txt') as f2:
     system_prompt_2 = f2.read()
 
-with open('prompts_ud_gemma/example_after_glossary_prompt.txt') as f3:
+with open('prompts_ud_gigachat/example_after_glossary_prompt.txt') as f3:
     system_prompt_3 = f3.read()
 # Системные роли удобнее подгружать из отдельного файла
 # Задача: собрать это всё в функцию parse(system_role, user_prompt), кот. принимает на вход system prompt и выдает matches[1]

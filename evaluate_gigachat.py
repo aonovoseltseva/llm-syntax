@@ -1,7 +1,7 @@
 import argparse, re, random, os
 import torch
 import pandas as pd
-from transformers import AutoTokenizer, BitsAndBytesConfig, Gemma3ForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, GenerationConfig
 
 parser = argparse.ArgumentParser(description="Инструмент для парсинга синтаксической структуры")
 print("parser started")
@@ -19,14 +19,19 @@ database_path = args.database
 output_results = args.results
 
 
-model_id = "google/gemma-3-1b-it"
+model_id = "ai-sage/GigaChat-20B-A3B-instruct"
 
 # Применяем квантизацию: загружаем модель меньшей размерности
 quantization_config = BitsAndBytesConfig(load_in_8bit=True) if args.quantization == True else None
 
 # Инициализация модели из HuggingFace: загружается локально на наше устройство
 # Это значит, что она не использует сторонние сервисы, а все вычисления выполняются у нас
-model = Gemma3ForCausalLM.from_pretrained(
+model_name = "ai-sage/GigaChat-20B-A3B-instruct"
+tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True, torch_dtype=torch.bfloat16, device_map="auto")
+model.generation_config = GenerationConfig.from_pretrained(model_name)
+
+.from_pretrained(
     model_id, quantization_config=quantization_config
 ).eval()
 
