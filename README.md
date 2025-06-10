@@ -12,6 +12,7 @@ python3 llm_parse.py --eval False --input "data.txt" --output "parsing.txt"
 ## Hypotheses
 
 Hypothesis 0: Despite AI hallucinations, properly prompted LLMs can be used for syntax parsing without additional functionality (to prove this, we want to collect data on their mistakes)
+
 Hypothesis 1: Due to numerous hallucinations, LLMs can be used for syntax parsing only as natural language interfaces, providing enhanced visualization, explanation and advanced data representation 
 
 ### Hypothesis 0
