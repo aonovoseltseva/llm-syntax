@@ -1,2 +1,19 @@
+# Python virtual environment
+.venv/
+
+# Environment files
 .env
-.venv
+
+# VSCode settings
+.vscode/
+
+# Output/results files
+results.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.txt
