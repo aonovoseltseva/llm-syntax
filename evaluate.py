@@ -108,7 +108,7 @@ def collect_outputs(prompt, chunk_file):
             },
         
             ]
-                ]
+         ]
     print(f"     Messages created: {len(messages)} outer items, {len(messages[0])} inner messages")
 
     print("     Tokenizing messages...")

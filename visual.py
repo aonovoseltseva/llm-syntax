@@ -1,6 +1,6 @@
-import os stanza re argparse torch
+import os, stanza, re, argparse, torch
 
-from transformers import TextStreamer AutoTokenizer BitsAndBytesConfig
+from transformers import TextStreamer, AutoTokenizer, BitsAndBytesConfig
 from transformers import GemmaForCausalLM as Gemma3ForCausalLM  
 
 parser = argparse.ArgumentParser(description="Инструмент для парсинга синтаксической структуры")
