@@ -1,4 +1,4 @@
-import os, argparse, re
+import argparse, re
 from transformers import AutoTokenizer, BitsAndBytesConfig, Gemma3ForCausalLM
 import torch
 
@@ -26,14 +26,14 @@ model = Gemma3ForCausalLM.from_pretrained(
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 
 # Подгрузка промптов с файла
-with open('prompts/short_glossary.txt') as f1:
+with open('prompts_ud_gemma/short_glossary.txt') as f1:
     system_prompt_1 = f1.read()
 # Задача: подставить сюда еще 2 промпта под новыми переменными
 ## TODO ##
-with open('prompts/long_glossary_prompt.txt') as f2:
+with open('prompts_ud_gemma/long_glossary_prompt.txt') as f2:
     system_prompt_2 = f2.read()
 
-with open('prompts/example_after_glossary_prompt.txt') as f3:
+with open('prompts_ud_gemma/example_after_glossary_prompt.txt') as f3:
     system_prompt_3 = f3.read()
 # Системные роли удобнее подгружать из отдельного файла
 # Задача: собрать это всё в функцию parse(system_role, user_prompt), кот. принимает на вход system prompt и выдает matches[1]
